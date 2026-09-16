@@ -127,23 +127,61 @@ pip install -r requirements.txt
 ---
 
 ## 9. Correr los tests
-
+ 
 Desde la carpeta raíz del proyecto:
-
+ 
 ```cmd
 pytest
 ```
-
+ 
 o si `pytest` no está en el PATH:
-
+ 
 ```cmd
 python -m pytest
 ```
-
+ 
 ---
-
+ 
+## 8. Código simple para validar que pytest funciona (VS Code)
+ 
+Crea un archivo llamado `test_basico.py` en la raíz del proyecto con esto:
+ 
+```python
+# test_basico.py
+ 
+def sumar(a, b):
+    return a + b
+ 
+def test_sumar():
+    assert sumar(2, 3) == 5
+ 
+def test_sumar_negativos():
+    assert sumar(-1, -1) == -2
+```
+ 
+### Correrlo desde la terminal de VS Code
+ 
+1. Abre la carpeta del proyecto en VS Code
+2. Abre la terminal integrada: `` Ctrl + ` ``
+3. Si usas entorno virtual, actívalo primero (ver punto 7)
+4. Corre:
+```cmd
+   pytest
+```
+   o
+```cmd
+   python -m pytest
+```
+ 
+Si todo salió bien, deberías ver algo como:
+ 
+```
+test_basico.py ..                                                      [100%]
+2 passed in 0.01s
+```
+ 
 ## Resumen express (orden recomendado)
-
+ 
 ```cmd
 py --list
 winget upgrade Python.Python.3.14
